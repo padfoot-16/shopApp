@@ -1,17 +1,59 @@
 import 'package:flutter/material.dart';
 
-Widget homepage() {
+import 'Shoppingcart.dart';
+
+
+ 
+class Homepage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
   return Scaffold(
           body: Column(
         children: [
           Container(
-            height: 170,
+            height: 189,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(100),
                   bottomRight: Radius.circular(100)),
-              color: Colors.red,
+              color: Colors.yellow[700],
             ),
+            child: Column(
+              children: [
+                SizedBox(height:35),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children:[
+                   Container(
+                      height: 40,
+                      child:Icon(
+                        Icons.list,
+                        size: 40,
+                        )
+                      ),
+                  
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+              context,
+              MaterialPageRoute(builder: ( context) => Shopcart()),
+            );
+                    },
+                    child: Container(
+                      height: 40,
+                      child:Icon(
+                        Icons.shopping_cart,
+                        size: 40,
+                        )
+                      ),
+                  ),
+                  ]
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
           ),
           Container(
             height: 170,
@@ -51,7 +93,7 @@ Widget homepage() {
                     children: [
                       Container(
                         decoration: BoxDecoration(border: Border.all(color:Colors.black)),
-                        child: Text("categorie a",style: TextStyle(fontSize: 25),)
+                        child: Text("categorie b",style: TextStyle(fontSize: 25),)
                         ),  
                     ],
                   ),
@@ -78,7 +120,7 @@ Widget homepage() {
                     children: [
                       Container(
                         decoration: BoxDecoration(border: Border.all(color:Colors.black)),
-                        child: Text("categorie a",style: TextStyle(fontSize: 25),)
+                        child: Text("categorie c",style: TextStyle(fontSize: 25),)
                         ),  
                     ],
                   ),
@@ -95,3 +137,6 @@ Widget homepage() {
       ),
     );
 }
+}
+
+
