@@ -24,13 +24,29 @@ class Homepage extends StatelessWidget{
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children:[
-                   Container(
-                      height: 40,
-                      child:Icon(
-                        Icons.list,
-                        size: 40,
-                        )
-                      ),
+                   GestureDetector(
+                     onTap: (){
+                       Drawer(child: ListView(children: [
+                         ListTile(
+                           title:Text("drawer test 1")
+                         ),
+                         ListTile(
+                           title:Text("drawer test 2")
+                         ),
+                         ListTile(
+                           title:Text("drawer test 3")
+                         )
+                       ],),
+                       );
+                       },
+                     child: Container(
+                        height: 40,
+                        child:Icon(
+                          Icons.list,
+                          size: 40,
+                          )
+                        ),
+                   ),
                   
                   GestureDetector(
                     onTap: (){
